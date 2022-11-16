@@ -5,7 +5,7 @@ try:
         host="localhost",
         port=3306,
         user="root",
-        password="Andrik89@",
+        password="yourpass",
         database="koshyk",
         cursorclass=pymysql.cursors.DictCursor
     )
