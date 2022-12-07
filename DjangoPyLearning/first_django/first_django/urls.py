@@ -21,5 +21,6 @@ urlpatterns = [
     path('validator/', include('first_app.urls')),
     path('website/', include('second_app.urls')),
     path('library/', include('library.urls')),
-    path('city/', include('city_website_app.urls'))
+    path('city/', include('city_website_app.urls')),
+    path('country/', include('countries_app.urls'))
 ]
