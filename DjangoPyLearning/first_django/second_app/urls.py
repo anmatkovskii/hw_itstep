@@ -7,6 +7,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contacts/', views.contacts, name='contacts'),
     path('news/', views.news, name='news'),
-    path('rulers/', views.rulers, name='rulers')
+    path('rulers/', views.rulers, name='rulers'),
+    path('dictsort/', views.dictsort, name='dictsort')
 ]
 

@@ -50,3 +50,11 @@ def show_info(request, product_name):
     except:
         return HttpResponse("Error")
     return HttpResponse(f'Your product: {end_str}')
+
+
+def phone_valid(request, phone):
+    return HttpResponse(f'Your phone number is correct: {phone}')
+
+
+def gmail_valid(request, gmail):
+    return HttpResponse(f'Your phone number is correct: {gmail}')
