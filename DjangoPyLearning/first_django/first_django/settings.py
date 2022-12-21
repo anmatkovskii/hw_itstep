@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'second_app',
     'library',
     'city_website_app',
-    'countries_app'
+    'countries_app',
+    'writers'
 ]
 
 MIDDLEWARE = [

@@ -22,5 +22,6 @@ urlpatterns = [
     path('website/', include('second_app.urls')),
     path('library/', include('library.urls')),
     path('city/', include('city_website_app.urls')),
-    path('country/', include('countries_app.urls'))
+    path('country/', include('countries_app.urls')),
+    path('writers/', include('writers.urls'))
 ]
