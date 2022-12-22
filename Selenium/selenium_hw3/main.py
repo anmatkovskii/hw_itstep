@@ -26,3 +26,4 @@ file.write(f"                {month.text}\n")
 for i in name:
     file.write(f"Lesson scheduled: {i.text}\n")
 file.close()
+agent_007.close()
