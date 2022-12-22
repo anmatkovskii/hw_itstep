@@ -5,25 +5,24 @@ from selenium.webdriver.common.by import By
 # Вкажіть шлях до вашого веб-драйверу
 agent_007 = webdriver.Chrome(executable_path="D:\\Programming\\hw_itstep\\Selenium\\chromedriver.exe")
 
-agent_007.get(url="https://www.marvel.com/characters")
+agent_007.get(url="https://mystat.itstep.org/en/auth/login/index?returnUrl=%2Fen%2Fmain%2Fdashboard%2Fpage%2Findex")
+time.sleep(1)
+username = agent_007.find_element(By.NAME, "username")
+username.send_keys("Matko_kq46")
+time.sleep(0.4)
+password = agent_007.find_element(By.NAME, "password")
+password.send_keys("Andrik8989A")
+time.sleep(0.4)
+agent_007.find_element(By.CLASS_NAME, "login-action").click()
+time.sleep(3)
+agent_007.find_element(By.CLASS_NAME, "schedule-item").click()
+time.sleep(2)
 
-get_links = []
-links = agent_007.find_elements(By.CLASS_NAME, "grid-base.grid__6 a.explore__link")
 
-file = open("characters.txt", "w")
-for i in links:
-    get_links.append(i.get_attribute("href"))
-for i in get_links:
-    agent_007.get(url=i)
-    name = agent_007.find_elements(By.CLASS_NAME, "masthead__headline")
-    file.write(f"Hero: {name[0].text}\n")
-    info_type = agent_007.find_elements(By.CLASS_NAME, "railBioInfoItem__label")
-    info_content = agent_007.find_elements(By.CLASS_NAME, "railBioLinks")
-    if info_content:
-        for j in range(len(info_content)):
-            file.write(f"{info_type[j].text}: {info_content[j].text}\n")
-    else:
-        file.write(f"No info found about this character")
-    file.write("\n")
+file = open("rozklad.txt", "w")
+name = agent_007.find_elements(By.CLASS_NAME, "active-day")
+month = agent_007.find_element(By.CLASS_NAME, "mount")
+file.write(f"                {month.text}\n")
+for i in name:
+    file.write(f"Lesson scheduled: {i.text}\n")
 file.close()
-agent_007.close()
